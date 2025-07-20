@@ -1,16 +1,17 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Pets from './components'
-import Vets from './components'
-import Owners from './components'
-import Appointments from './components'
-
+import Pets from './components/Pets'
+import Vets from './components/Vets'
+import Owners from './components/Owners'
+import Appointments from './components/Appointments'
+import NavigationHeader from './components/NavigationHeader'
 function App() {
  
 
   return (
     <>
      <Router>
-      <h1>Vite + React</h1>
+      
+      <NavigationHeader />
 
       <Routes>
         <Route path = "/pets" element={<Pets />}/>
