@@ -10,7 +10,7 @@ const PetModal = ({ modalOpen, setModalOpen, selectedPet }) => {
 
     useEffect(() => {
 
-        setFormData({ name: selectedPet.name || "", age: selectedPet.age || "", species: selectedPet.species || "" , image: selectedPet.image || ""})
+        setFormData({ name: selectedPet.name || "", age: selectedPet.age || "", species: selectedPet.species || "" , owner_id:selectedPet.ownerId || "", image: selectedPet.image || ""})
 
     }, [selectedPet, setModalOpen])
 
@@ -20,7 +20,7 @@ const PetModal = ({ modalOpen, setModalOpen, selectedPet }) => {
         left: "50%",
         bgcolor: "white",
         width: 300,
-        height: 300,
+        height: 400,
         transform: "translate(-50%, -50%)",
         p: 3,
         borderRadius: 1,
@@ -73,6 +73,15 @@ const PetModal = ({ modalOpen, setModalOpen, selectedPet }) => {
                         value={formdata.species}
                         onChange={(e) =>
                             setFormData({ ...formdata, species: e.target.value })
+                        }
+                        fullWidth
+                        sx={{ mb: 2 }}
+                    />
+                     <TextField
+                        label="OwnerId"
+                        value={formdata.ownerId}
+                        onChange={(e) =>
+                            setFormData({ ...formdata, owner_id: e.target.value })
                         }
                         fullWidth
                         sx={{ mb: 2 }}
